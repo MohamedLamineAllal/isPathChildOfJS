@@ -4,9 +4,9 @@ const PATH_SEPA = ['\\', '/'];
  * 
  * @param {*} path 
  * @param {*} parentPath 
- * @param {optional: if specified as true, it allow us to have equality too included} orEquale 
+ * @param {optional: if specified as true, it allow us to have equality too included} orEqual 
  */
-function isPathChildOf(path, parentPath, orEquale) {
+function isPathChildOf(path, parentPath, orEqual) {
     path = path.trim();
     parentPath = parentPath.trim();
 
@@ -22,7 +22,7 @@ function isPathChildOf(path, parentPath, orEquale) {
     // console.log("parentPath = " + parentPath);
     // console.log("-----within the func-----");    
 
-    if (!orEquale && parentPath.length >= path.length) return false; // parent path should be smaller in characters then the child path (and they should be all the same from the start , if they differ in one char then they are not related)
+    if (!orEqual && parentPath.length >= path.length) return false; // parent path should be smaller in characters then the child path (and they should be all the same from the start , if they differ in one char then they are not related)
 
     for (let i = 0; i < parentPath.length; i++) {
         if (!(isPathSeparator(parentPath[i]) && isPathSeparator(path[i])) && parentPath[i] !== path[i]) {// if both are not separators, then we compare (if one is separator, the other is not, the are different, then it return false, if they are both no separators, then it come down to comparaison, if they are same nothing happen, if they are different it return false)

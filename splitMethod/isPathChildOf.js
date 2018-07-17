@@ -1,11 +1,11 @@
-function isPathChildOf(path, parentPath) {
+function isPathChildOf(path, parentPath, orEqual) {
     // we remove the last character if it's a path separator (that just to have our splitStr still work well for the purpose)
     let pathLastChr = path[path.length - 1];
     let parentPathLastChr = parentPath[parentPath.length - 1];
     if(pathLastChr === '\\' || pathLastChr === '/') path = path.substr(0,path.length - 1);
     if(parentPathLastChr === '\\' || parentPathLastChr === '/') parentPath = parentPath.substr(0, parentPath.length - 1);
 
-    if(path.length <= parentPath.length) return false; // the parentPath should be of a length smaller then  the child path (why they are the same until the parent end)
+    if(!orEqual && path.length <= parentPath.length) return false; // the parentPath should be of a length smaller then  the child path (why they are the same until the parent end)
 
     let spPath = splitPath(path);
     let spParentPath = splitPath(parentPath);
