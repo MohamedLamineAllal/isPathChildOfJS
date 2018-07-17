@@ -44,6 +44,15 @@ let pth3 = '/look/at/this/pathholabi';
 console.log(`${pth3}  is a child of ${pthParent3}  ===>  ${isPathChildOf(pth3, pthParent3)}`);
 
 
+// test 3: equality
+console.log('\ntest 3 : equality');
+console.log("==========================");
+
+let pParent =  "/this/is/same/Path";
+let p =  "/this\\is/same/Path/";
+
+console.log(`${p} is child of  ${pParent}   ====> ${isPathChildOf(p, pParent, true)}`);
+
 /**
  * 
  * strings are immutable and passed by reference in function
