@@ -5,10 +5,12 @@ function isPathChildOf(path, parentPath) {
     if(pathLastChr === '\\' || pathLastChr === '/') path = path.substr(0,path.length - 1);
     if(parentPathLastChr === '\\' || parentPathLastChr === '/') parentPath = parentPath.substr(0, parentPath.length - 1);
 
+    if(path.length <= parentPath.length) return false; // the parentPath should be of a length smaller then  the child path (why they are the same until the parent end)
+
     let spPath = splitPath(path);
     let spParentPath = splitPath(parentPath);
     
-    if(spPath.length <= spParentPath.length) return false; // if the parent path is bigger then the child or equal, then the child is n't a child
+    // if(spPath.length <= spParentPath.length) return false; // if the parent path is bigger then the child or equal, then the child is n't a child
 
     for(let i = 0; i < spParentPath.length; i++){
         if(spParentPath[i] !== spPath[i]) return false;
