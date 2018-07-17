@@ -18,11 +18,9 @@ function isPathChildOf(path, parentPath) {
     if (parentPath.length >= path.length) return false; // parent path should be smaller in characters then the child path (and they should be all the same from the start , if they differ in one char then they are not related)
 
     for (let i = 0; i < parentPath.length; i++) {
-        let sepaParent = isPathSeparator(parentPath[i]);
-        let sepaChild = isPathSeparator(path[i]);
-        if (sepaParent && !sepaChild) { // if parent char is a separator, then if the other is not that's not a child
-            return false;
-        } else if (parentPath[i] !== path[i]  && (!sepaParent || !sepaChild)) { // here what left is both are separator, or parent not sepa and child one of the two possibilites,  execept for the first case both sepa, where the direct comparaison will fail (give wrong, but it's true) then we take of just that casen, and it's nice (we have covered all cases where it can be false)  
+        // let sepaParent = ;
+        // let sepaChild = ;
+        if (!(isPathSeparator(parentPath[i]) && isPathSeparator(path[i])) && parentPath[i] !== path[i]) {// if both are not separators, then we compare (if one is separator, the other is not, the are different, then it return false, if they are both no separators, then it come down to comparaison, if they are same nothing happen, if they are different it return false)
             return false;
         }
     }
