@@ -1,0 +1,27 @@
+{
+  "name": "ispathchildofjs",
+  "version": "1.0.0",
+  "description": "a function to check if a path is a child of another path",
+  "main": "isChildOf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node --nolazy --inspect-brk=9229 ./comparingStringsMethod/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohamedLamineAllal/isPathChildOfJS.git"
+  },
+  "keywords": [
+    "path",
+    "isChild",
+    "parent",
+    "child",
+    "javascript"
+  ],
+  "author": "Allal Mohamed Lamine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohamedLamineAllal/isPathChildOfJS/issues"
+  },
+  "homepage": "https://github.com/MohamedLamineAllal/isPathChildOfJS#readme"
+}
